@@ -45,7 +45,7 @@ namespace ManagerUI
 
         Dictionary<string, Type> AutoFillerDictionary = new Dictionary<string, Type>();
 
-        string AutoFillEngine { get; set; } = typeof(GoogleFiller).Name;
+        string AutoFillEngine { get; set; } = Properties.Settings.Default.AutoFillerEngine;
 
         /// <summary>
         /// Constructor of the VocabEditorForm.
@@ -106,6 +106,14 @@ namespace ManagerUI
         private void UpdateAutoFillEngineMenu()
         {
             AutoFiller = null;
+
+            if (String.IsNullOrEmpty(AutoFillEngine))
+            {
+                AutoFillEngine = typeof(GoogleFiller).Name;
+                Properties.Settings.Default.AutoFillerEngine = AutoFillEngine;
+                Properties.Settings.Default.Save();
+            }
+
             foreach (ToolStripMenuItem toolStripMenuItem in autoFillEngineToolStripMenuItem.DropDownItems)
             {
                 if (toolStripMenuItem.Text == AutoFillEngine)
@@ -994,6 +1002,8 @@ namespace ManagerUI
         {
             ToolStripMenuItem item = sender as ToolStripMenuItem;
             AutoFillEngine = item.Text;
+            Properties.Settings.Default.AutoFillerEngine = AutoFillEngine;
+            Properties.Settings.Default.Save();
             UpdateAutoFillEngineMenu();
         }
     }

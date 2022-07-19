@@ -28,7 +28,13 @@
         "Entry"
         {
         "MsmKey" = "8:_1A4F3D4439CB7A8DF3DAF0EDC6EC7871"
-        "OwnerKey" = "8:_E2D05AC963044CD984EEF63EBC7A47A0"
+        "OwnerKey" = "8:_1B6F84102BDD2D528DF68BAF7B85AAD9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1B6F84102BDD2D528DF68BAF7B85AAD9"
+        "OwnerKey" = "8:_8074F88C9509FD62F5D8B02AF6476E80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -45,8 +51,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_674012E6578A497ECB2BA0EFDE730FA9"
-        "OwnerKey" = "8:_99842C57509AE8674BF48522F45C4B42"
+        "MsmKey" = "8:_4BCE9B9E61353B46D4F81DBC23CB635F"
+        "OwnerKey" = "8:_8074F88C9509FD62F5D8B02AF6476E80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -63,7 +69,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_99842C57509AE8674BF48522F45C4B42"
+        "MsmKey" = "8:_8074F88C9509FD62F5D8B02AF6476E80"
         "OwnerKey" = "8:_130EBAA9D16B4749A67987AD1DE63E60"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -75,8 +81,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_E2D05AC963044CD984EEF63EBC7A47A0"
-        "OwnerKey" = "8:_99842C57509AE8674BF48522F45C4B42"
+        "MsmKey" = "8:_DD28669CA7F775AB07A65F1047B9008D"
+        "OwnerKey" = "8:_8074F88C9509FD62F5D8B02AF6476E80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -88,19 +94,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_99842C57509AE8674BF48522F45C4B42"
+        "OwnerKey" = "8:_8074F88C9509FD62F5D8B02AF6476E80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_674012E6578A497ECB2BA0EFDE730FA9"
+        "OwnerKey" = "8:_4BCE9B9E61353B46D4F81DBC23CB635F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E2D05AC963044CD984EEF63EBC7A47A0"
+        "OwnerKey" = "8:_DD28669CA7F775AB07A65F1047B9008D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1B6F84102BDD2D528DF68BAF7B85AAD9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -282,6 +294,37 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1B6F84102BDD2D528DF68BAF7B85AAD9"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:HtmlAgilityPack, Version=1.11.36.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_1B6F84102BDD2D528DF68BAF7B85AAD9"
+                    {
+                    "Name" = "8:HtmlAgilityPack.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:HtmlAgilityPack.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_CA2F24DEC54F406D8726B7F71DE159F9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
@@ -326,20 +369,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_674012E6578A497ECB2BA0EFDE730FA9"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4BCE9B9E61353B46D4F81DBC23CB635F"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:System.Data.SQLite, Version=1.0.115.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_674012E6578A497ECB2BA0EFDE730FA9"
+                    "_4BCE9B9E61353B46D4F81DBC23CB635F"
                     {
-                    "Name" = "8:System.Data.SQLite.DLL"
+                    "Name" = "8:System.Data.SQLite.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:System.Data.SQLite.DLL"
+            "SourcePath" = "8:System.Data.SQLite.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CA2F24DEC54F406D8726B7F71DE159F9"
@@ -397,20 +440,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_99842C57509AE8674BF48522F45C4B42"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8074F88C9509FD62F5D8B02AF6476E80"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:ManagerLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_99842C57509AE8674BF48522F45C4B42"
+                    "_8074F88C9509FD62F5D8B02AF6476E80"
                     {
-                    "Name" = "8:ManagerLibrary.DLL"
+                    "Name" = "8:ManagerLibrary.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:ManagerLibrary.DLL"
+            "SourcePath" = "8:ManagerLibrary.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CA2F24DEC54F406D8726B7F71DE159F9"
@@ -448,20 +491,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E2D05AC963044CD984EEF63EBC7A47A0"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DD28669CA7F775AB07A65F1047B9008D"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:HtmlAgilityPack, Version=1.11.36.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E2D05AC963044CD984EEF63EBC7A47A0"
+                    "_DD28669CA7F775AB07A65F1047B9008D"
                     {
-                    "Name" = "8:HtmlAgilityPack.DLL"
+                    "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:HtmlAgilityPack.DLL"
+            "SourcePath" = "8:Newtonsoft.Json.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CA2F24DEC54F406D8726B7F71DE159F9"
@@ -558,7 +601,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Vocab Manager"
         "ProductCode" = "8:{04AC37EC-EF6D-492A-80D6-FF8EBA332861}"
-        "PackageCode" = "8:{5D5997DB-2746-46A6-BCA9-AC2A2EA4B138}"
+        "PackageCode" = "8:{CE7389BB-4B31-4577-86D7-73A8559FE13F}"
         "UpgradeCode" = "8:{80F7C37A-2C74-4315-A973-8044159E3B6E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
