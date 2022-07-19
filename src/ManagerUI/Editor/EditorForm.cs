@@ -4,6 +4,7 @@ using ManagerLibrary.Export;
 using ManagerLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -42,6 +43,10 @@ namespace ManagerUI
         /// </summary>
         bool StopAutoFillAll { get; set; } = true;
 
+        Dictionary<string, Type> AutoFillerDictionary = new Dictionary<string, Type>();
+
+        string AutoFillEngine { get; set; } = typeof(GoogleFiller).Name;
+
         /// <summary>
         /// Constructor of the VocabEditorForm.
         /// </summary>
@@ -56,6 +61,62 @@ namespace ManagerUI
 
             LoadTagList();
             ClearTagEditorInput();
+
+            InitializeAutoFillEngineMenu();
+            UpdateAutoFillEngineMenu();
+        }
+
+        private void AddToolStripMenuItem(Type type)
+        {
+            AutoFillerDictionary.Add(type.Name, type);
+            ToolStripMenuItem toolStripMenuItem = new ToolStripMenuItem()
+            {
+                Text = type.Name,
+                Name = $"{type.Name}AutoFillerToolStripMenuItem",
+            };
+            toolStripMenuItem.Click += new EventHandler(AutoFillerEngineToolStripMenuItem_Click);
+            autoFillEngineToolStripMenuItem.DropDownItems.Add(toolStripMenuItem);
+        }
+
+        private void InitializeAutoFillEngineMenu()
+        {
+            AddToolStripMenuItem(typeof(GoogleFiller));
+            AddToolStripMenuItem(typeof(LongmanFiller));
+
+            string path = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + "plugins";
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+                return;
+            }
+            foreach (var file in Directory.GetFiles(path))
+            {
+                string dllPath = Path.GetFullPath(file);
+                System.Reflection.Assembly DLL = System.Reflection.Assembly.LoadFrom(dllPath);
+                foreach (Type type in DLL.GetExportedTypes())
+                {
+                    if (typeof(IAutoFiller).IsAssignableFrom(type))
+                    {
+                        AddToolStripMenuItem(type);
+                    }
+                }
+            }
+        }
+
+        private void UpdateAutoFillEngineMenu()
+        {
+            AutoFiller = null;
+            foreach (ToolStripMenuItem toolStripMenuItem in autoFillEngineToolStripMenuItem.DropDownItems)
+            {
+                if (toolStripMenuItem.Text == AutoFillEngine)
+                {
+                    toolStripMenuItem.Checked = true;
+                }
+                else
+                {
+                    toolStripMenuItem.Checked = false;
+                }
+            }
         }
 
         /// <summary>
@@ -797,6 +858,12 @@ namespace ManagerUI
 
             if (ValidateInternetConnection())
             {
+                if (AutoFiller?.Spelling() != txtWordText.Text)
+                {
+                    string word = txtWordText.Text;
+                    ClearWordEditorInput();
+                    txtWordText.Text = word;
+                }
                 if (String.IsNullOrEmpty(txtDefinition.Text.Trim()))
                 {
                     doFill = AutoAppendDefinition(errPrompt);
@@ -877,7 +944,7 @@ namespace ManagerUI
         {
             if (AutoFiller == null || AutoFiller.Spelling() != txtWordText.Text)
             {
-                AutoFiller = new LongmanFiller(txtWordText.Text);
+                 AutoFiller = Activator.CreateInstance(AutoFillerDictionary[AutoFillEngine], txtWordText.Text) as IAutoFiller;
             }
         }
 
@@ -923,5 +990,11 @@ namespace ManagerUI
             }
         }
 
+        private void AutoFillerEngineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem item = sender as ToolStripMenuItem;
+            AutoFillEngine = item.Text;
+            UpdateAutoFillEngineMenu();
+        }
     }
 }

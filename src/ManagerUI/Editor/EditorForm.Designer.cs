@@ -81,6 +81,7 @@
             this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoFillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoFillAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoFillEngineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tips = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splWordEditor)).BeginInit();
             this.splWordEditor.Panel1.SuspendLayout();
@@ -718,7 +719,8 @@
             // 
             this.otherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.autoFillToolStripMenuItem,
-            this.autoFillAllToolStripMenuItem});
+            this.autoFillAllToolStripMenuItem,
+            this.autoFillEngineToolStripMenuItem});
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
             this.otherToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.otherToolStripMenuItem.Text = "Auto Fill";
@@ -736,6 +738,12 @@
             this.autoFillAllToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
             this.autoFillAllToolStripMenuItem.Text = "Fill All";
             this.autoFillAllToolStripMenuItem.Click += new System.EventHandler(this.autoFillAllToolStripMenuItem_Click);
+            // 
+            // autoFillEngineToolStripMenuItem
+            // 
+            this.autoFillEngineToolStripMenuItem.Name = "autoFillEngineToolStripMenuItem";
+            this.autoFillEngineToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.autoFillEngineToolStripMenuItem.Text = "AutoFill Engine";
             // 
             // tips
             // 
@@ -854,5 +862,6 @@
         private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autoFillToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autoFillAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autoFillEngineToolStripMenuItem;
     }
 }
