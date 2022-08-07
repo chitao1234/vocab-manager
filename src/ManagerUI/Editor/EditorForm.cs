@@ -91,6 +91,10 @@ namespace ManagerUI
             }
             foreach (var file in Directory.GetFiles(path))
             {
+                if (Path.GetExtension(file) != ".dll")
+                {
+                    continue;
+                }
                 string dllPath = Path.GetFullPath(file);
                 System.Reflection.Assembly DLL = System.Reflection.Assembly.LoadFrom(dllPath);
                 foreach (Type type in DLL.GetExportedTypes())
